@@ -8,7 +8,7 @@ ${HEADER_ELETRONICOS}          //h2[contains(.,'Eletrônicos e Tecnologia')]
 ${CAMPO_PESQUISA}              twotabsearchtextbox  
 ${BOTAO_PESQUISA}              nav-search-submit-button
 ${BOTAO_PARA_CARRINHO}         //div[@class=' nav-progressive-attribute']
-        
+
 
 *** Keywords ***
 Abrir o navegador
@@ -52,7 +52,7 @@ Clicar para incluir o item no carrinho
     Click Element    id=add-to-cart-button
 
 Verificar se o item "${PRODUTO}" foi incluido no carrinho    
-    Click Element    id=nav-cart
+    Click Element    id=nav-cart-count
     Click Element    locator=${BOTAO_PARA_CARRINHO}
     Element Should Be Visible    locator=//span[@class='a-truncate-cut'][contains(.,'${PRODUTO}')]
 
@@ -83,7 +83,7 @@ Quando pesquisar pelo produto "Xbox Series S"
 
 Então o título da página deve ficar "Amazon.com.br : Xbox Series S"
     Clicar no botão de pesquisa
-    
+
 E um produto da linha "Xbox Series S" deve ser mostrado na página
     Clicar no botão de pesquisa
     Verificar resultado da pesquisa se está listando o produto "Xbox Series S"
@@ -94,7 +94,7 @@ E o usuário inclui o produto "Xbox Series S" no carrinho
 
 Então verifica que o produto "Xbox Series S" foi adicionado com sucesso  
     Verificar se o item "Xbox Series S" foi incluido no carrinho  
-    
+
 E o usuário remove o produto "Xbox Series S" do carrinho
     Verificar se o item "Xbox Series S" foi incluido no carrinho 
     Remove o item do carrinho 
