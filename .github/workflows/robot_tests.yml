@@ -1,0 +1,45 @@
+name: Run Robot Framework Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-tests:
+    # Rodando no Windows
+    runs-on: windows-latest
+
+    steps:
+      # 1. Checkout do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # 3. Instalar dependências
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+          pip install robotframework-requests
+          # Adicione outras dependências, se necessário
+
+      # 4. Rodar os testes
+      - name: Run Robot Framework tests
+        run: |
+          mkdir reports
+          robot --outputdir reports tests/
+
+      # 5. Publicar relatórios como artefatos do GitHub Actions
+      - name: Upload Robot Framework reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: robot-reports
+          path: reports/
