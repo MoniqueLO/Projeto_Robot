@@ -1,6 +1,6 @@
 # Projeto_Robot
-Este projeto visa demonstrar habilidades e conhecimentos em automação de testes usando o Robot Framework.
-Foi utilizado o site da Amazon para validar algumas habilidades, como pesquisa e fluxo de inclusão e exclusão de item no carrinho.
+Este projeto visa demonstrar habilidades e conhecimentos em automação de testes usando o Robot Framework.<br/>
+Foi utilizado o site da Amazon para validar algumas habilidades, como pesquisa e fluxo de inclusão e exclusão de item no carrinho.<br/>
 Além disso, foram realizados alguns testes utilizando algumas estruturas do Robot, como tipos de variáveis, utilização de argumentos e estruturas de repetição.
 
 # Instalações e configurações
